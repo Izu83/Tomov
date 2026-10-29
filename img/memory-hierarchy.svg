@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" width="720" height="320" font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#111">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#111"/>
+    </marker>
+  </defs>
+  <rect width="720" height="320" fill="#fff"/>
+
+  <g stroke="#111" stroke-width="2">
+    <polygon points="244,40 316,40 348,100 212,100" fill="#111"/>
+    <polygon points="208,106 352,106 390,166 170,166" fill="#555"/>
+    <polygon points="166,172 394,172 432,232 128,232" fill="#bbb"/>
+    <polygon points="124,238 436,238 474,298 86,298" fill="#f1f1f1"/>
+  </g>
+  <g text-anchor="middle" font-weight="600" font-size="15">
+    <text x="280" y="76" fill="#fff">Регистри</text>
+    <text x="280" y="142" fill="#fff">Кеш L1 / L2 / L3</text>
+    <text x="280" y="208">RAM</text>
+    <text x="280" y="274">SSD / HDD</text>
+  </g>
+
+  <g font-size="13" fill="#444">
+    <text x="500" y="66">в процесора · &lt; 1 ns</text>
+    <text x="500" y="84" fill="#888">байтове</text>
+    <text x="500" y="132">в процесора · ~1–10 ns</text>
+    <text x="500" y="150" fill="#888">KB – MB</text>
+    <text x="500" y="198">~100 ns · губи се без ток</text>
+    <text x="500" y="216" fill="#888">GB</text>
+    <text x="500" y="264">~0.1 ms · пази данните</text>
+    <text x="500" y="282" fill="#888">стотици GB – TB</text>
+  </g>
+
+  <line x1="40" y1="292" x2="40" y2="48" stroke="#111" stroke-width="2" marker-end="url(#arr)"/>
+  <text transform="translate(28 170) rotate(-90)" text-anchor="middle" font-size="13" fill="#444">по-бързо, по-малко, по-скъпо</text>
+</svg>

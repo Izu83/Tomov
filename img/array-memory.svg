@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 230" width="720" height="230" font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#111">
+  <rect width="720" height="230" fill="#fff"/>
+  <text x="360" y="30" text-anchor="middle" font-size="15" font-family="Consolas, Menlo, monospace">int[] arr = {10, 20, 30, 40};</text>
+
+  <g font-size="14" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-weight="600">
+    <text x="165" y="70">arr[0]</text><text x="295" y="70">arr[1]</text><text x="425" y="70">arr[2]</text><text x="555" y="70">arr[3]</text>
+  </g>
+
+  <g stroke="#bbb" stroke-width="1.5" fill="#f6f6f6" stroke-dasharray="4 4">
+    <rect x="20" y="80" width="80" height="60"/>
+    <rect x="620" y="80" width="80" height="60"/>
+  </g>
+  <g fill="#bbb" font-size="20" text-anchor="middle"><text x="60" y="117">…</text><text x="660" y="117">…</text></g>
+
+  <g stroke="#111" stroke-width="2" fill="#fff">
+    <rect x="100" y="80" width="130" height="60"/>
+    <rect x="230" y="80" width="130" height="60"/>
+    <rect x="360" y="80" width="130" height="60"/>
+    <rect x="490" y="80" width="130" height="60"/>
+  </g>
+  <g font-size="24" font-weight="700" text-anchor="middle" font-family="Consolas, Menlo, monospace">
+    <text x="165" y="119">10</text><text x="295" y="119">20</text><text x="425" y="119">30</text><text x="555" y="119">40</text>
+  </g>
+
+  <g font-size="13" text-anchor="middle" fill="#888" font-family="Consolas, Menlo, monospace">
+    <text x="165" y="162">0x1000</text><text x="295" y="162">0x1004</text><text x="425" y="162">0x1008</text><text x="555" y="162">0x100C</text>
+  </g>
+  <text x="360" y="182" text-anchor="middle" font-size="12" fill="#888">всеки int заема 4 байта → адресите растат с 4</text>
+
+  <text x="360" y="214" text-anchor="middle" font-size="15" font-family="Consolas, Menlo, monospace">адрес на arr[i] = 0x1000 + i × 4</text>
+</svg>

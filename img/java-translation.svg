@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340" font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#111">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#111"/>
+    </marker>
+  </defs>
+  <rect width="760" height="340" fill="#fff"/>
+
+  <g font-size="13" font-weight="700" letter-spacing=".04em" fill="#888">
+    <text x="20" y="30">КОМПИЛАТОР · C, C++, Go, Rust</text>
+    <text x="20" y="134">ИНТЕРПРЕТАТОР · Python, PHP, Ruby</text>
+    <text x="20" y="238">ХИБРИД · Java</text>
+  </g>
+
+  <!-- Row 1 -->
+  <rect x="20" y="42" width="140" height="48" rx="8" fill="#fff" stroke="#111" stroke-width="1.5"/>
+  <text x="90" y="71" text-anchor="middle" font-size="15" font-family="Consolas, Menlo, monospace">main.c</text>
+  <line x1="162" y1="66" x2="218" y2="66" stroke="#111" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="190" y="58" text-anchor="middle" font-size="12" fill="#444" font-family="Consolas, Menlo, monospace">gcc</text>
+  <rect x="220" y="42" width="140" height="48" rx="8" fill="#111"/>
+  <text x="290" y="63" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">машинен код</text>
+  <text x="290" y="81" text-anchor="middle" font-size="12" fill="#bbb" font-family="Consolas, Menlo, monospace">main.exe</text>
+  <line x1="362" y1="66" x2="648" y2="66" stroke="#111" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="505" y="58" text-anchor="middle" font-size="12" fill="#444">изпълнява се директно</text>
+
+  <!-- Row 2 -->
+  <rect x="20" y="146" width="140" height="48" rx="8" fill="#fff" stroke="#111" stroke-width="1.5"/>
+  <text x="90" y="175" text-anchor="middle" font-size="15" font-family="Consolas, Menlo, monospace">main.py</text>
+  <line x1="162" y1="170" x2="418" y2="170" stroke="#111" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="290" y="162" text-anchor="middle" font-size="12" fill="#444">при всяко пускане</text>
+  <rect x="420" y="146" width="190" height="48" rx="8" fill="#fff" stroke="#111" stroke-width="1.5"/>
+  <text x="515" y="167" text-anchor="middle" font-size="14" font-weight="600">интерпретатор</text>
+  <text x="515" y="185" text-anchor="middle" font-size="12" fill="#888">превежда ред по ред</text>
+  <line x1="612" y1="170" x2="648" y2="170" stroke="#111" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Row 3 -->
+  <rect x="20" y="250" width="140" height="48" rx="8" fill="#fff" stroke="#111" stroke-width="1.5"/>
+  <text x="90" y="279" text-anchor="middle" font-size="15" font-family="Consolas, Menlo, monospace">Main.java</text>
+  <line x1="162" y1="274" x2="218" y2="274" stroke="#111" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="190" y="266" text-anchor="middle" font-size="12" fill="#444" font-family="Consolas, Menlo, monospace">javac</text>
+  <rect x="220" y="250" width="140" height="48" rx="8" fill="#f1f1f1" stroke="#111" stroke-width="1.5"/>
+  <text x="290" y="271" text-anchor="middle" font-size="14" font-weight="600">байткод</text>
+  <text x="290" y="289" text-anchor="middle" font-size="12" fill="#888" font-family="Consolas, Menlo, monospace">Main.class</text>
+  <line x1="362" y1="274" x2="418" y2="274" stroke="#111" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="390" y="266" text-anchor="middle" font-size="12" fill="#444" font-family="Consolas, Menlo, monospace">java</text>
+  <rect x="420" y="250" width="190" height="48" rx="8" fill="#fff" stroke="#111" stroke-width="1.5"/>
+  <text x="515" y="271" text-anchor="middle" font-size="14" font-weight="600">JVM</text>
+  <text x="515" y="289" text-anchor="middle" font-size="12" fill="#888">интерпретатор + JIT</text>
+  <line x1="612" y1="274" x2="648" y2="274" stroke="#111" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="515" y="322" text-anchor="middle" font-size="12" fill="#888">същият .class върви на всяка ОС с JVM</text>
+
+  <!-- CPU column -->
+  <g fill="#111">
+    <rect x="650" y="42" width="90" height="48" rx="8"/>
+    <rect x="650" y="146" width="90" height="48" rx="8"/>
+    <rect x="650" y="250" width="90" height="48" rx="8"/>
+  </g>
+  <g fill="#fff" font-size="15" font-weight="700" text-anchor="middle">
+    <text x="695" y="71">CPU</text><text x="695" y="175">CPU</text><text x="695" y="279">CPU</text>
+  </g>
+</svg>

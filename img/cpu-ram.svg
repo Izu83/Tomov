@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 310" width="720" height="310" font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#111">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#111"/>
+    </marker>
+  </defs>
+  <rect width="720" height="310" fill="#fff"/>
+
+  <!-- CPU -->
+  <rect x="30" y="30" width="290" height="230" rx="12" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
+  <text x="50" y="58" font-size="16" font-weight="700">CPU</text>
+  <rect x="50" y="76" width="115" height="76" rx="8" fill="#fff" stroke="#111" stroke-width="1.5"/>
+  <text x="107" y="98" text-anchor="middle" font-size="12.5" fill="#888">Регистри</text>
+  <text x="107" y="120" text-anchor="middle" font-size="15" font-family="Consolas, Menlo, monospace">R1 = 5</text>
+  <text x="107" y="140" text-anchor="middle" font-size="15" font-family="Consolas, Menlo, monospace">R2 = 3</text>
+  <rect x="185" y="76" width="115" height="76" rx="8" fill="#111"/>
+  <text x="242" y="98" text-anchor="middle" font-size="12.5" fill="#bbb">ALU</text>
+  <text x="242" y="128" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="Consolas, Menlo, monospace">5 + 3 = 8</text>
+  <text x="242" y="172" text-anchor="middle" font-size="13" font-weight="600">② събиране</text>
+  <rect x="50" y="190" width="250" height="52" rx="8" fill="#fff" stroke="#111" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="175" y="211" text-anchor="middle" font-size="13" font-weight="600">Кеш</text>
+  <text x="175" y="230" text-anchor="middle" font-size="12" fill="#888">копия на скоро ползвани данни от RAM</text>
+
+  <!-- RAM -->
+  <rect x="440" y="30" width="250" height="230" rx="12" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
+  <text x="460" y="58" font-size="16" font-weight="700">RAM</text>
+  <g stroke="#111" stroke-width="1.5" fill="#fff">
+    <rect x="460" y="76" width="210" height="38"/>
+    <rect x="460" y="114" width="210" height="38"/>
+    <rect x="460" y="152" width="210" height="38" fill="#111"/>
+    <rect x="460" y="190" width="210" height="38"/>
+  </g>
+  <line x1="540" y1="76" x2="540" y2="228" stroke="#111" stroke-width="1.5"/>
+  <g font-size="13" font-family="Consolas, Menlo, monospace" fill="#888">
+    <text x="470" y="100">0x1000</text><text x="470" y="138">0x1004</text><text x="470" y="176" fill="#bbb">0x1008</text><text x="470" y="214">0x100C</text>
+  </g>
+  <g font-size="15" font-family="Consolas, Menlo, monospace">
+    <text x="556" y="100">a = 5</text><text x="556" y="138">b = 3</text><text x="556" y="176" fill="#fff" font-weight="700">c = 8</text><text x="556" y="214" fill="#888">…</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="438" y1="114" x2="324" y2="114" stroke="#111" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="381" y="104" text-anchor="middle" font-size="13" font-weight="600">① зарежда a, b</text>
+  <line x1="324" y1="171" x2="438" y2="171" stroke="#111" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="381" y="161" text-anchor="middle" font-size="13" font-weight="600">③ записва c</text>
+
+  <text x="360" y="292" text-anchor="middle" font-size="13.5" fill="#444" font-family="Consolas, Menlo, monospace">int c = a + b;</text>
+</svg>

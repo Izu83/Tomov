@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 270" width="720" height="270" font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#111">
+  <rect width="720" height="270" fill="#fff"/>
+  <text x="360" y="34" text-anchor="middle" font-size="20" font-weight="700">1 байт = 8 бита</text>
+
+  <g font-size="13" fill="#888" text-anchor="middle" font-family="Consolas, Menlo, monospace">
+    <text x="112" y="80">128</text><text x="184" y="80">64</text><text x="256" y="80">32</text><text x="328" y="80">16</text>
+    <text x="400" y="80">8</text><text x="472" y="80">4</text><text x="544" y="80">2</text><text x="616" y="80">1</text>
+  </g>
+
+  <g stroke="#111" stroke-width="2">
+    <rect x="80"  y="90" width="64" height="60" rx="6" fill="#fff"/>
+    <rect x="152" y="90" width="64" height="60" rx="6" fill="#111"/>
+    <rect x="224" y="90" width="64" height="60" rx="6" fill="#fff"/>
+    <rect x="296" y="90" width="64" height="60" rx="6" fill="#fff"/>
+    <rect x="368" y="90" width="64" height="60" rx="6" fill="#fff"/>
+    <rect x="440" y="90" width="64" height="60" rx="6" fill="#fff"/>
+    <rect x="512" y="90" width="64" height="60" rx="6" fill="#fff"/>
+    <rect x="584" y="90" width="64" height="60" rx="6" fill="#111"/>
+  </g>
+  <g font-size="28" font-weight="700" text-anchor="middle" font-family="Consolas, Menlo, monospace">
+    <text x="112" y="130">0</text><text x="184" y="130" fill="#fff">1</text><text x="256" y="130">0</text><text x="328" y="130">0</text>
+    <text x="400" y="130">0</text><text x="472" y="130">0</text><text x="544" y="130">0</text><text x="616" y="130" fill="#fff">1</text>
+  </g>
+
+  <g stroke="#888" stroke-width="1.5" fill="none">
+    <path d="M84 162 v8 h272 v-8"/>
+    <path d="M372 162 v8 h272 v-8"/>
+  </g>
+  <g font-size="14" text-anchor="middle" font-family="Consolas, Menlo, monospace">
+    <text x="220" y="194">0100 → 4</text>
+    <text x="508" y="194">0001 → 1</text>
+  </g>
+  <text x="360" y="214" text-anchor="middle" font-size="12.5" fill="#888">всеки 4 бита = 1 шестнадесетична цифра</text>
+
+  <text x="360" y="252" text-anchor="middle" font-size="17" font-family="Consolas, Menlo, monospace">01000001₂ = 64 + 1 = 65 = 0x41 = 'A'</text>
+</svg>

@@ -10,6 +10,7 @@
   --line-strong: #cfcfcf;
   --accent: #111111;
   --accent-fg: #ffffff;
+  --red: #d42a20;
   --topbar-h: 60px;
   --sidebar-w: 280px;
   --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -28,6 +29,7 @@
     --line-strong: #3a3a3a;
     --accent: #ececec;
     --accent-fg: #0e0e0e;
+    --red: #ff5b4f;
   }
   .markdown img { filter: invert(0.92) hue-rotate(180deg); }
 }
@@ -82,53 +84,129 @@ a { color: inherit; }
   border-radius: 6px;
 }
 
+/* "Двойки във випуска" — the teacher's red pen is the only colour on the site */
+
 .counter {
   margin-left: auto;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 6px 6px 6px 14px;
+  height: 42px;
+  padding: 0 5px 0 6px;
   font: inherit;
   font-size: 14px;
+  font-weight: 500;
   color: var(--fg);
   background: var(--bg);
-  border: 1px solid var(--line-strong);
+  border: 1.5px solid var(--fg);
   border-radius: 999px;
+  box-shadow: 0 3px 0 var(--fg);
   cursor: pointer;
   user-select: none;
-  transition: border-color .15s, transform .08s;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .08s, box-shadow .08s;
 }
-.counter:hover { border-color: var(--fg); }
-.counter:active { transform: scale(0.97); }
+.counter-label { white-space: nowrap; }
+.counter:hover .counter-stamp { transform: rotate(-14deg) scale(1.08); }
+.counter:active { transform: translateY(3px); box-shadow: 0 0 0 var(--fg); }
+.counter:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+
+.counter-stamp {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  font-family: "Caveat", cursive;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--red);
+  border: 2px solid var(--red);
+  border-radius: 52% 48% 55% 45% / 47% 55% 45% 53%;
+  transform: rotate(-8deg);
+  transition: transform .15s;
+}
+.counter-stamp.stamp { animation: stamp .35s cubic-bezier(.3, 1.6, .5, 1); }
+@keyframes stamp {
+  0% { transform: rotate(-8deg) scale(1); }
+  35% { transform: rotate(10deg) scale(.7); }
+  100% { transform: rotate(-8deg) scale(1); }
+}
+
+.counter.shake { animation: shake .3s ease-out; }
+@keyframes shake {
+  25% { translate: -2px 0; }
+  50% { translate: 2px 0; }
+  75% { translate: -1px 0; }
+}
 
 .counter-value {
-  min-width: 2.4em;
-  padding: 2px 10px;
+  position: relative;
+  display: grid;
+  min-width: 2.6em;
+  height: 30px;
+  padding: 0 10px;
+  overflow: hidden;
   font-family: var(--mono);
   font-weight: 600;
+  line-height: 30px;
   text-align: center;
   background: var(--accent);
   color: var(--accent-fg);
   border-radius: 999px;
 }
-.counter-value.bump { animation: bump .25s ease-out; }
-@keyframes bump {
-  40% { transform: scale(1.25); }
-  100% { transform: scale(1); }
+.counter-value > span { grid-area: 1 / 1; }
+.counter-value .roll-in { animation: rollIn .3s cubic-bezier(.2, .9, .3, 1.2); }
+.counter-value .roll-out { animation: rollOut .25s ease-in forwards; }
+@keyframes rollIn { from { transform: translateY(100%); } }
+@keyframes rollOut { to { transform: translateY(-100%); opacity: 0; } }
+
+.flying-two {
+  position: fixed;
+  z-index: 50;
+  pointer-events: none;
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-size: var(--size);
+  line-height: 1;
+  color: var(--red);
+  translate: -50% -50%;
+  animation: fly .95s cubic-bezier(.25, .6, .4, 1) both;
+}
+@keyframes fly {
+  0% { transform: translate(0, 0) scale(.4) rotate(0); opacity: 1; }
+  40% { transform: translate(calc(var(--dx) * .6), var(--up)) scale(1) rotate(calc(var(--rot) * .5)); opacity: 1; }
+  100% { transform: translate(var(--dx), var(--fall)) scale(.9) rotate(var(--rot)); opacity: 0; }
 }
 
-.plus-one {
+.counter-toast {
   position: fixed;
+  top: calc(var(--topbar-h) + 10px);
+  right: 20px;
+  z-index: 40;
+  max-width: min(320px, calc(100vw - 32px));
+  padding: 6px 14px 4px;
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--accent-fg);
+  background: var(--accent);
+  border-radius: 10px;
   pointer-events: none;
-  font-family: var(--mono);
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--fg);
-  animation: floatUp .7s ease-out forwards;
-  z-index: 50;
+  opacity: 0;
+  transform: translateY(-8px) rotate(-2deg);
+  transition: opacity .2s, transform .2s;
 }
-@keyframes floatUp {
-  to { transform: translateY(-28px); opacity: 0; }
+.counter-toast.show { opacity: 1; transform: translateY(0) rotate(-2deg); }
+.counter-toast.big {
+  font-size: 30px;
+  color: #fff;
+  background: var(--red);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .counter, .counter-stamp, .counter-toast { animation: none !important; transition: none; }
 }
 
 .menu-btn {
@@ -258,9 +336,43 @@ a { color: inherit; }
   padding-bottom: .4rem;
   border-bottom: 1px solid var(--line);
 }
-.markdown h3 { font-size: 1.12rem; margin: 1.8rem 0 .6rem; }
+.markdown h3 { font-size: 1.3rem; margin: 2.2rem 0 .7rem; }
+.markdown h4 { font-size: 1.05rem; margin: 1.6rem 0 .5rem; }
 .markdown p, .markdown ul, .markdown ol { margin: 0 0 1rem; }
-.markdown li { margin: .25rem 0; }
+.markdown li { margin: .4rem 0; }
+.markdown li > p { margin: 0; }
+.markdown li > ul, .markdown li > ol { margin: .3rem 0 0; }
+
+/* Additions on top of the professor's notes */
+.callout {
+  margin: 0 0 1.2rem;
+  padding: 12px 16px 14px;
+  border: 1px solid var(--line-strong);
+  border-left: 3px solid var(--fg);
+  border-radius: 8px;
+  background: var(--bg-soft);
+}
+.callout-note { border-left-style: dashed; background: var(--bg); }
+.callout-title {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.callout-added {
+  margin-left: auto;
+  font-weight: 500;
+  letter-spacing: .02em;
+  text-transform: none;
+  color: var(--muted);
+  cursor: help;
+}
+.callout > :last-child { margin-bottom: 0; }
+.callout pre { background: var(--bg); }
+.callout-note pre { background: var(--bg-code); }
 .markdown a { text-underline-offset: 3px; }
 .markdown strong { font-weight: 600; }
 .markdown hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
@@ -316,6 +428,7 @@ a { color: inherit; }
 .markdown img {
   display: block;
   max-width: 100%;
+  height: auto;
   margin: 1rem auto 1.4rem;
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -390,5 +503,13 @@ a { color: inherit; }
 @media (max-width: 480px) {
   .topbar { padding: 0 12px; gap: 8px; }
   .brand-text { display: none; }
-  .counter { font-size: 12.5px; padding-left: 10px; gap: 6px; }
+  .counter { font-size: 12.5px; gap: 6px; height: 38px; }
+  .counter-stamp { width: 26px; height: 26px; font-size: 22px; }
+  .counter-value { height: 26px; line-height: 26px; padding: 0 8px; }
+  .counter-toast { right: 12px; }
+}
+
+@media (max-width: 360px) {
+  .brand { display: none; }
+  .counter-label { font-size: 11.5px; }
 }
