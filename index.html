@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лекции по ООП</title>
+  <meta name="description" content="Записки от лекциите по ООП с Java на Явор Томов — випуск 23, УКТЦ.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-btn" id="menuBtn" aria-label="Покажи лекциите" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="brand" href="#/">
+      <span class="brand-mark">{ }</span>
+      <span class="brand-text">ООП <span class="muted">/ Java</span></span>
+    </a>
+    <button class="counter" id="counterBtn" title="Натисни, ако си изкарал двойка">
+      <span class="counter-label">Двойки във випуска</span>
+      <span class="counter-value" id="counterValue">…</span>
+    </button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">Лекции</div>
+      <nav id="lectionList" class="lection-list" aria-label="Лекции">
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+      </nav>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <main class="content">
+      <div class="lection-meta" id="lectionMeta"></div>
+      <article class="markdown" id="article">
+        <p class="muted">Зареждане…</p>
+      </article>
+      <nav class="pager" id="pager"></nav>
+      <footer class="footer">
+        Информацията в сайта не се продава. Всички лекции са записани от уроци на випуск 23. (233/234/235).
+      </footer>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
