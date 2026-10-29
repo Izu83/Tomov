@@ -2,7 +2,7 @@
 // visitor sees the same number. Falls back to a local count if it's offline.
 const COUNTER_URL = 'https://abacus.jasoncameron.dev';
 const COUNTER_NS = 'izu83-tomov';
-const COUNTER_KEY = 'dvoiki';
+const COUNTER_KEY = 'dvoiki-v2';
 const LOCAL_KEY = 'tomov-dvoiki-local';
 
 const MONTHS = ['януари', 'февруари', 'март', 'април', 'май', 'юни', 'юли',
